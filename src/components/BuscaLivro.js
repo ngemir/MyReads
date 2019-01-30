@@ -7,7 +7,7 @@ import * as BooksAPI from '../API/BooksAPI'
 class BuscaLivro extends React.Component {
     static propTypes = {
         livros: PropTypes.array.isRequired,
-        moveEstande: PropTypes.func.isRequired,
+        moveEstande: PropTypes.func.isRequired
     }
 
     //Inicia com a pesquisa vazia e mostrando todos os livros
@@ -19,22 +19,34 @@ class BuscaLivro extends React.Component {
      // Procura a lista de livros do campo pesquisado
      atualizaPesquisa = (pesquisa) => {
         
-        this.setState({ pesquisa : pesquisa})
+        this.setState({ pesquisa : pesquisa.trim() })
         
         // Utiliza API para pesquisar
         BooksAPI.search(pesquisa).then((livrosPesquisados => {
             // Se estiver vazio não retorna livro
-            if (!pesquisa) {
-                this.setState({ livroPesquisados: [] });
-                return
-            }
+            if (livrosPesquisados.error)
+                    return []
             
-            if (livrosPesquisados && !livrosPesquisados.error) {
-                this.verEstande(livrosPesquisados)
+            const meusLivros = this.props.livros
+                return livrosPesquisados.map((livro) => {
+                    const livrosEncontrados = meusLivros.find(meuLivro => meuLivro.id === livro.id);
+                    livro.shelf = livrosEncontrados ? livrosEncontrados.shelf : 'none'
+                    return livro;
+                })
+        }))
+        .then((livros) => {
+                this.setState(() => ({
+                    livros
+                }))
+            }).catch(() => {
+                this.limpaPesquisa();
+            })  
+    }
 
-                this.setState({ livrosPesquisados: livrosPesquisados })
-            }
-        }))  
+    limpaPesquisa = () => {
+        this.setState(() => ({
+            livros: this.props.livros
+        }))
     }
 
     verEstande = (livrosPesquisados) => {
