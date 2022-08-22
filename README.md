@@ -5,6 +5,8 @@ Este é um projeto solicitado pela Udacity, este projeto tem como objetivo testa
 
 ## Como utilizar
 
+Acesse [https://my-reads-lac.vercel.app/]
+ou
 Primeiramente tem que ter instalado o node.js e ter acesso ao npm, em seguida:
 - Baixe o arquivo aqui : https://github.com/SwaveNg/MyReads/archive/master.zip
 - Depois de baixado abra o Prompt de comando, e entre na pasta utilizando os comandos "dir" e "cd".
