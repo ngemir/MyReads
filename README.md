@@ -3,10 +3,13 @@
 
 Este é um projeto solicitado pela Udacity, este projeto tem como objetivo testar o conhecimento em React e React Router v4, criando uma biblioteca virtual que separa os livros que deseja ler, que está lendo, e que finalizou a leitura.
 
+![MyReads Preview](./public/MyReads.gif)
 ## Como utilizar
 
-Acesse [https://my-reads-lac.vercel.app/]
-ou
+[🔗Acesse por aqui](https://my-reads-lac.vercel.app/)
+
+### Ou pode instalar
+
 Primeiramente tem que ter instalado o node.js e ter acesso ao npm, em seguida:
 - Baixe o arquivo aqui : https://github.com/SwaveNg/MyReads/archive/master.zip
 - Depois de baixado abra o Prompt de comando, e entre na pasta utilizando os comandos "dir" e "cd".
