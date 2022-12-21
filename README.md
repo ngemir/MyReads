@@ -11,7 +11,7 @@ Este é um projeto solicitado pela Udacity, este projeto tem como objetivo testa
 ### Ou pode instalar
 
 Primeiramente tem que ter instalado o node.js e ter acesso ao npm, em seguida:
-- Baixe o arquivo aqui : https://github.com/SwaveNg/MyReads/archive/master.zip
+- Baixe o arquivo aqui : https://github.com/ngemir/MyReads/archive/master.zip
 - Depois de baixado abra o Prompt de comando, e entre na pasta utilizando os comandos "dir" e "cd".
 - Instale as dependencias utilizando: npm install 
 - execute: npm start , para iniciar o servidor local
